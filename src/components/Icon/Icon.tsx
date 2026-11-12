@@ -3,6 +3,7 @@ import type { SVGProps } from 'react';
 export type IconName =
   | 'arrow-left'
   | 'arrow-right'
+  | 'bolt'
   | 'close'
   | 'facebook'
   | 'instagram'

@@ -1,0 +1,79 @@
+.section {
+  padding: 40px 0 80px;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-h2);
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.list {
+  display: grid;
+  gap: 40px;
+  margin-top: 72px;
+}
+
+/* аватарка "вилазить" над карткою */
+.card {
+  position: relative;
+  padding: 52px 20px 40px;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-card-alt);
+  text-align: center;
+}
+
+.avatar {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  border-radius: var(--radius-circle);
+  transform: translateX(-50%);
+}
+
+.name {
+  font-size: var(--fs-review-name);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-review-name);
+}
+
+.text {
+  margin-top: 16px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  color: var(--color-text-review);
+}
+
+.empty {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 64px 0 120px;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 72px 20px;
+    margin-top: 96px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

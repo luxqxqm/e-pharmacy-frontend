@@ -1,0 +1,121 @@
+.section {
+  padding: 40px 0;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px 20px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.title {
+  max-width: 300px;
+  font-size: var(--fs-banner);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-banner);
+  letter-spacing: var(--ls-banner);
+}
+
+.text {
+  max-width: 400px;
+  margin: 20px 0 40px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-height);
+  padding: 0 32px;
+  border: var(--border-width) solid var(--color-border-light-50);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.button:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 40px;
+  margin-top: 40px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+}
+
+.bolt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-primary-10);
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .banner {
+    padding: 80px 48px 48px;
+  }
+
+  .title {
+    max-width: 460px;
+  }
+
+  .text {
+    margin: 24px 0 64px;
+  }
+
+  .features {
+    margin-top: 64px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 72px 72px 72px 104px;
+  }
+
+  .content {
+    max-width: 460px;
+  }
+
+  .image {
+    width: 608px;
+  }
+}
