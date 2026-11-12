@@ -1,9 +1,15 @@
-.layout {
+.page {
   position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  overflow: hidden;
 }
 
 .header {
@@ -12,12 +18,81 @@
   min-height: 80px;
 }
 
-.main {
+.content {
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 0 80px;
+}
+
+.promo {
+  position: relative;
+  max-width: 614px;
+}
+
+.tablet {
+  position: absolute;
+  top: -65px;
+  right: 20px;
+  z-index: -1;
+  width: 95px;
+  height: auto;
+}
+
+.title {
+  font-size: var(--fs-banner);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-banner);
+  letter-spacing: var(--ls-banner);
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.stripes {
+  position: absolute;
+  right: -90px;
+  bottom: -80px;
+  width: 220px;
+  height: auto;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .header {
     min-height: 92px;
+  }
+
+  .content {
+    padding: 140px 0 100px;
+  }
+
+  .tablet {
+    top: -85px;
+    right: 130px;
+    width: 180px;
+  }
+
+  .stripes {
+    width: 380px;
+    right: -100px;
+    bottom: -100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 64px;
+    padding-top: 160px;
+  }
+
+  .stripes {
+    width: 460px;
   }
 }

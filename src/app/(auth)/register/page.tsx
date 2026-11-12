@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
 
+import RegisterForm from '@/components/AuthForms/RegisterForm';
+
 export const metadata: Metadata = { title: 'Register' };
 
-export default function Page() {
-  return (
-    <div className="container">
-      <h1>Register</h1>
-    </div>
-  );
+export default function RegisterPage() {
+  return <RegisterForm />;
 }
