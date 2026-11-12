@@ -1,0 +1,52 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(29, 30, 33, 0.6);
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  padding: 48px 32px 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: var(--color-text);
+}
+
+.title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-h1);
+}
+
+.text {
+  margin-top: 14px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* outline-кнопка за замовчуванням маленька: тут робимо її такої ж висоти */
+.actions > * {
+  min-height: var(--control-height);
+}

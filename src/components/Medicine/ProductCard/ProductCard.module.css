@@ -1,0 +1,84 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-primary-60);
+  border-radius: var(--radius-md);
+  background-color: var(--color-image-bg);
+}
+
+.image {
+  object-fit: contain;
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name,
+.price {
+  font-size: var(--fs-product-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-product-title);
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price {
+  flex-shrink: 0;
+}
+
+.supplier {
+  margin-top: 4px;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-text-60);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.addButton {
+  min-height: 34px;
+  padding: 0 18px;
+}
+
+.details {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.details:hover {
+  color: var(--color-primary);
+}

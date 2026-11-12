@@ -27,6 +27,26 @@ export type Product = {
   description?: string; // поки нема на беку
 };
 
+export const CATEGORIES = [
+  'Medicine',
+  'Heart',
+  'Head',
+  'Hand',
+  'Leg',
+  'Dental Care',
+  'Skin Care',
+];
+
+export type CartItem = {
+  productId: Product | null; // null, якщо продукт видалили з бази
+  quantity: number;
+};
+
+export type Cart = {
+  products: CartItem[];
+  totalPrice: number;
+};
+
 export type ProductsResponse = {
   page: number;
   perPage: number;

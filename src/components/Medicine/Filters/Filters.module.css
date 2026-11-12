@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 18px;
+  border: var(--border-width) solid var(--color-border-input);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  font-size: var(--fs-small);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.field:hover,
+.field:focus {
+  border-color: var(--color-primary);
+}
+
+.field::placeholder {
+  color: var(--color-text-40);
+}
+
+.button {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .field {
+    width: 224px;
+  }
+}
