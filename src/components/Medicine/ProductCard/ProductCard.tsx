@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import AddToCartButton from '@/components/AddToCartButton/AddToCartButton';
+import ProductImage from '@/components/ProductImage/ProductImage';
 import type { Product } from '@/types';
 import { formatPrice } from '@/utils/formatPrice';
 
@@ -15,10 +15,9 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Image
+        <ProductImage
           src={product.photo}
           alt={product.name}
-          fill
           sizes="(min-width: 1440px) 280px, (min-width: 768px) 226px, 335px"
           className={styles.image}
         />

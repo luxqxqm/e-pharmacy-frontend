@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import Icon from '@/components/Icon/Icon';
+import ProductImage from '@/components/ProductImage/ProductImage';
 import type { Product } from '@/types';
 import { formatPrice } from '@/utils/formatPrice';
 
@@ -15,10 +14,9 @@ export default function ProductOverview({ product }: ProductOverviewProps) {
   return (
     <div className={styles.overview}>
       <div className={styles.imageWrapper}>
-        <Image
+        <ProductImage
           src={product.photo}
           alt={product.name}
-          fill
           sizes="(min-width: 1440px) 364px, (min-width: 768px) 364px, 335px"
           className={styles.image}
           priority
