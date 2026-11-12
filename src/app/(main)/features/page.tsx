@@ -1,11 +1,57 @@
 import type { Metadata } from 'next';
 
+import { ButtonLink } from '@/components/Button/Button';
+import Icon from '@/components/Icon/Icon';
+
+import styles from './page.module.css';
+
 export const metadata: Metadata = { title: 'Features' };
 
-export default function Page() {
+// сюди веде "Read more" з промо-банера "Secure delivery 100%"
+const features = [
+  {
+    title: 'Secure delivery',
+    text: 'Every order is packed and sealed in the pharmacy and delivered straight to your door. Medicines that need special conditions travel in temperature-controlled packaging.',
+  },
+  {
+    title: 'Verified pharmacies',
+    text: 'We work only with licensed pharmacies, so every product in the catalog comes from a trusted supplier.',
+  },
+  {
+    title: 'Fast checkout',
+    text: 'Add medicines to the cart, enter your shipping info and pay with cash on delivery or by bank card.',
+  },
+  {
+    title: 'Nearest store',
+    text: 'Find a pharmacy near you, check its rating and opening status before you go.',
+  },
+];
+
+export default function FeaturesPage() {
   return (
-    <div className="container">
-      <h1>Features</h1>
-    </div>
+    <section className={styles.section}>
+      <div className="container">
+        <h1 className={styles.title}>Features</h1>
+        <p className={styles.subtitle}>
+          Why thousands of people choose E-Pharmacy to get their medicine
+        </p>
+
+        <ul className={styles.list}>
+          {features.map((feature) => (
+            <li key={feature.title} className={styles.card}>
+              <span className={styles.icon}>
+                <Icon name="bolt" size={20} />
+              </span>
+              <h2 className={styles.cardTitle}>{feature.title}</h2>
+              <p className={styles.cardText}>{feature.text}</p>
+            </li>
+          ))}
+        </ul>
+
+        <ButtonLink href="/medicine" className={styles.button}>
+          Buy medicine
+        </ButtonLink>
+      </div>
+    </section>
   );
 }

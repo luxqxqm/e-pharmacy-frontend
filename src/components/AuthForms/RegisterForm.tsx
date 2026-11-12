@@ -6,6 +6,7 @@ import { useForm, type FieldErrors } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
 import Button from '@/components/Button/Button';
+import { useRedirectIfLoggedIn } from '@/hooks/useRedirectIfLoggedIn';
 import { getErrorMessage } from '@/lib/api';
 import { register as registerUser, type RegisterData } from '@/lib/auth';
 
@@ -13,6 +14,7 @@ import styles from './AuthForm.module.css';
 
 export default function RegisterForm() {
   const router = useRouter();
+  useRedirectIfLoggedIn();
   const {
     register,
     handleSubmit,
