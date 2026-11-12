@@ -1,6 +1,5 @@
-import { API_URL } from '@/lib/env';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  console.log(API_URL);
-  return <></>;
+export default function RootPage() {
+  redirect('/home');
 }

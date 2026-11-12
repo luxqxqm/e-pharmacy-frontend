@@ -1,0 +1,38 @@
+.input {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 18px;
+  border: var(--border-width) solid var(--color-border-input);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-white);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input::placeholder {
+  color: var(--color-text-40);
+}
+
+.input:hover,
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+/* outline: none вище прибирає дефолтну рамку браузера,
+   тому для клавіатури повертаємо свій видимий фокус */
+.input:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-10);
+}
+
+/* Стан помилки: ставиться через aria-invalid (react-hook-form) */
+.input[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,63 @@
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--control-height);
+  padding: 0 32px;
+  border: var(--border-width) solid var(--color-primary-50);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-button);
+  color: var(--color-primary);
+  white-space: nowrap;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.register:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.login {
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--transition);
+}
+
+.login:hover {
+  opacity: 0.7;
+}
+
+/* ---------- На зеленому фоні ---------- */
+.onPrimary .register {
+  border-color: var(--color-border-light-50);
+  color: var(--color-text-light);
+}
+
+.onPrimary .register:hover {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.onPrimary .login {
+  color: var(--color-text-light);
+}
+
+.onPrimary :focus-visible {
+  outline-color: var(--color-white);
+}

@@ -1,0 +1,15 @@
+.logo {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 140px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .image {
+    width: 172px;
+  }
+}

@@ -1,0 +1,23 @@
+.layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+}
+
+.main {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 92px;
+  }
+}

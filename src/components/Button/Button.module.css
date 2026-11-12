@@ -1,0 +1,65 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-button);
+  white-space: nowrap;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.button:disabled {
+  opacity: 0.5;
+}
+
+/* Register, Add to cart, Buy medicine */
+.primary {
+  min-height: var(--control-height);
+  padding: 0 32px;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.primary:hover:not(:disabled),
+.primary:focus-visible {
+  background-color: var(--color-primary-hover);
+}
+
+/* View, Log out */
+.outline {
+  padding: 8px 18px;
+  background-color: transparent;
+  border-color: var(--color-primary-50);
+  color: var(--color-primary);
+}
+
+.outline:hover:not(:disabled),
+.outline:focus-visible {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+/* Remove */
+.danger {
+  padding: 8px 18px;
+  background-color: var(--color-danger-10);
+  color: var(--color-danger);
+}
+
+.danger:hover:not(:disabled),
+.danger:focus-visible {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
+.fullWidth {
+  width: 100%;
+}
