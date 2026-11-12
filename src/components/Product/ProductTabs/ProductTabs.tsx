@@ -51,7 +51,7 @@ export default function ProductTabs({ product }: ProductTabsProps) {
               `${product.name} is a product from the ${product.category} category by ${product.suppliers}. A detailed description will be added soon. Always read the label and consult your doctor before use.`}
           </p>
         ) : (
-          <ProductReviews productId={product._id} />
+          <ProductReviews />
         )}
       </div>
     </div>

@@ -13,10 +13,19 @@
   border-bottom: var(--border-width) solid var(--color-border);
 }
 
+.review:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .top {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   gap: 12px;
+}
+
+.avatar {
+  border-radius: var(--radius-circle);
 }
 
 .name {
@@ -24,36 +33,9 @@
   font-weight: var(--fw-semibold);
 }
 
-.date {
-  margin-top: 4px;
-  font-size: var(--fs-small);
-  color: var(--color-text-muted);
-}
-
-.stars {
-  display: flex;
-  gap: 2px;
-}
-
-.starFull {
-  color: var(--color-star);
-}
-
-.starEmpty {
-  color: var(--color-star-empty);
-}
-
 .comment {
   margin-top: 12px;
   font-size: var(--fs-label);
   line-height: var(--lh-body-long);
   color: var(--color-text-review);
-}
-
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 24px;
 }

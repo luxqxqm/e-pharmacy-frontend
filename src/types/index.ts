@@ -28,21 +28,6 @@ export type Product = {
   rating?: number; // поки нема на беку
 };
 
-// відгук до продукту — бекенд ще треба доробити
-export type ProductReview = {
-  _id: string;
-  name: string;
-  rating: number;
-  comment: string;
-  createdAt: string;
-};
-
-export type ProductReviewsResponse = {
-  page: number;
-  totalPage: number;
-  reviews: ProductReview[];
-};
-
 export const CATEGORIES = [
   'Medicine',
   'Heart',
