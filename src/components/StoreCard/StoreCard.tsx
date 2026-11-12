@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import Icon from '@/components/Icon/Icon';
@@ -10,11 +11,14 @@ type StoreCardProps = {
   store: Store;
   // якщо вся картка вже посилання, телефон не можна робити <a> (a в a — невалідно)
   phoneAsLink?: boolean;
+  // кнопка внизу картки (на сторінці Medicine store — "Visit Store")
+  action?: ReactNode;
 };
 
 export default function StoreCard({
   store,
   phoneAsLink = true,
+  action,
 }: StoreCardProps) {
   const isOpen = isStoreOpen();
   // для tel: лишаємо тільки цифри і +
@@ -59,6 +63,8 @@ export default function StoreCard({
           )}
         </li>
       </ul>
+
+      {action && <div className={styles.action}>{action}</div>}
     </article>
   );
 }

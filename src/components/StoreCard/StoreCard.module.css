@@ -89,6 +89,12 @@ a.infoItem:hover {
   color: var(--color-primary);
 }
 
+.action {
+  position: relative;
+  z-index: 1;
+  margin-top: 32px;
+}
+
 .icon {
   flex-shrink: 0;
   color: var(--color-primary);
