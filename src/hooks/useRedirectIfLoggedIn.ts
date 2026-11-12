@@ -8,7 +8,7 @@ export function useRedirectIfLoggedIn() {
 
   useEffect(() => {
     if (localStorage.getItem('accessToken')) {
-      router.replace('/home');
+      router.replace('/');
     }
   }, [router]);
 }

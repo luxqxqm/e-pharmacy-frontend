@@ -16,7 +16,7 @@ export default function Logo({ variant = 'default', className }: LogoProps) {
       : '/images/brand/logo.webp';
 
   return (
-    <Link href="/home" className={clsx(styles.logo, className)}>
+    <Link href="/" className={clsx(styles.logo, className)}>
       <Image
         src={src}
         alt="E-Pharmacy"

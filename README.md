@@ -20,7 +20,7 @@ Frontend for an online pharmacy platform: medicine catalog with search and filte
 
 | Route             | Access  | Description                                                    |
 | ----------------- | ------- | -------------------------------------------------------------- |
-| `/home`           | public  | Main banner, promo banners, nearest stores, reviews            |
+| `/`               | public  | Main banner, promo banners, nearest stores, reviews            |
 | `/medicine-store` | public  | All pharmacies with rating and OPEN / CLOSE status             |
 | `/medicine`       | public  | Catalog: filter by category and name, server-side pagination   |
 | `/product/[id]`   | public  | Product overview, quantity, Add to cart, Description / Reviews |

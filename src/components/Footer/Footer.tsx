@@ -7,7 +7,7 @@ import Logo from '@/components/Logo/Logo';
 import styles from './Footer.module.css';
 
 const links = [
-  { href: '/home', label: 'Home' },
+  { href: '/', label: 'Home' },
   { href: '/medicine-store', label: 'Medicine store' },
   { href: '/medicine', label: 'Medicine' },
 ];

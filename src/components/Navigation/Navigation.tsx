@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import styles from './Navigation.module.css';
 
 const links = [
-  { href: '/home', label: 'Home' },
+  { href: '/', label: 'Home' },
   { href: '/medicine-store', label: 'Medicine store' },
   { href: '/medicine', label: 'Medicine' },
 ];

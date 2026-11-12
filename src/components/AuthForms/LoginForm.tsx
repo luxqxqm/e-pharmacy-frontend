@@ -25,7 +25,7 @@ export default function LoginForm() {
     try {
       await login(data);
       toast.success('You have logged in');
-      router.push('/home');
+      router.push('/');
     } catch (error) {
       toast.error(getErrorMessage(error));
     }

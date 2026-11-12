@@ -16,7 +16,7 @@ export default function NotFound() {
         The page you are looking for doesn&apos;t exist or has been moved.
       </p>
       <Link
-        href="/home"
+        href="/"
         className={clsx(buttonStyles.button, buttonStyles.primary)}
       >
         Go to home

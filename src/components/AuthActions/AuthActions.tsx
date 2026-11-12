@@ -28,7 +28,7 @@ export default function AuthActions({
     onNavigate?.();
     await logout();
     toast.success('You have logged out');
-    router.push('/home');
+    router.push('/');
   };
 
   if (isLoggedIn) {

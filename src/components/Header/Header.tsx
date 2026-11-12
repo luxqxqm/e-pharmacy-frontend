@@ -17,7 +17,7 @@ export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const isHome = pathname === '/home';
+  const isHome = pathname === '/';
 
   return (
     <header className={clsx(styles.header, isHome && styles.hero)}>
