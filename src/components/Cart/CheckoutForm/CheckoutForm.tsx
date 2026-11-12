@@ -42,7 +42,6 @@ export default function CheckoutForm({
       reset();
       onSuccess();
     } catch (error) {
-      // наприклад: "Not enough stock for Aspirin"
       toast.error(getErrorMessage(error));
     }
   };

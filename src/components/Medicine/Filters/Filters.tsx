@@ -24,7 +24,6 @@ export default function Filters({
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // фільтри зберігаємо в URL: так працює пагінація, кнопка "назад" і посилання
     const params = new URLSearchParams();
     if (category) params.set('category', category);
     if (name.trim()) params.set('name', name.trim());

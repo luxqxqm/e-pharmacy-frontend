@@ -31,7 +31,6 @@ export default function ProductOverview({ product }: ProductOverviewProps) {
 
         <p className={styles.brand}>Brand: {product.suppliers}</p>
 
-        {/* рейтингу продукту поки нема на беку: показуємо, коли з'явиться */}
         {product.rating !== undefined && (
           <p className={styles.rating}>
             <Icon name="star" size={16} className={styles.star} />

@@ -8,7 +8,6 @@ import Reviews from '@/components/Home/Reviews/Reviews';
 
 export const metadata: Metadata = { title: 'Home' };
 
-// сторінка кешується і оновлюється раз на годину
 export const revalidate = 3600;
 
 export default function HomePage() {

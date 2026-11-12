@@ -31,7 +31,6 @@ export default function RegisterForm() {
     }
   };
 
-  // за ТЗ помилки валідації показуємо нотифікацією
   const onInvalid = (formErrors: FieldErrors<RegisterData>) => {
     const firstError = Object.values(formErrors)[0];
     if (firstError?.message) toast.error(firstError.message);

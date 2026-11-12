@@ -17,7 +17,6 @@ export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // на головній хедер зелений
   const isHome = pathname === '/home';
 
   return (

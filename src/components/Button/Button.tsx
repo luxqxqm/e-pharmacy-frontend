@@ -42,7 +42,6 @@ export default function Button({
   );
 }
 
-/** Посилання, що виглядає як кнопка (навігація — це <a>, а не <button>) */
 export function ButtonLink({
   variant,
   fullWidth,

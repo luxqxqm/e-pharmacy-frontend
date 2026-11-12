@@ -10,13 +10,11 @@ import type { Product } from '@/types';
 
 import styles from './page.module.css';
 
-// cache: generateMetadata і сторінка викликають це двічі, а запит піде один
 const getProduct = cache(async (id: string) => {
   try {
     const { data } = await api.get<Product>(`/products/${id}`);
     return data;
   } catch (error) {
-    // 404 — нема такого продукту, 400 — кривий id у URL
     const status = axios.isAxiosError(error) ? error.response?.status : 0;
     if (status === 404 || status === 400) return null;
     throw error;

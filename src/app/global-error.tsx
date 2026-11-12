@@ -1,6 +1,5 @@
 'use client';
 
-/** Останній рубіж: падіння в root layout. Тут немає globals.css, тому інлайн-стилі. */
 export default function GlobalError({
   reset,
 }: {

@@ -13,7 +13,6 @@ type ProductImageProps = {
   priority?: boolean;
 };
 
-// фото ліків з бекенда можуть бути порожні або биті — тоді показуємо заглушку
 export default function ProductImage({
   src,
   alt,
@@ -33,7 +32,6 @@ export default function ProductImage({
       className={className}
       priority={priority}
       onError={() => setHasError(true)}
-      // картинка могла впасти ще до того, як React підключився (onError тоді не спрацює)
       ref={(img) => {
         if (img && img.complete && img.naturalWidth === 0 && !hasError) {
           setHasError(true);

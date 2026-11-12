@@ -46,7 +46,6 @@
   margin-top: 32px;
 }
 
-/* outline-кнопка за замовчуванням маленька: тут робимо її такої ж висоти */
 .actions > * {
   min-height: var(--control-height);
 }

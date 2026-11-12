@@ -7,7 +7,6 @@ import { ROUTES } from '@/constants/routes';
 import styles from './Logo.module.css';
 
 type LogoProps = {
-  /** light: білий логотип для зеленого фону */
   variant?: 'default' | 'light';
   className?: string;
 };

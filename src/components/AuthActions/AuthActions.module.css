@@ -42,7 +42,6 @@
   opacity: 0.7;
 }
 
-/* ---------- На зеленому фоні ---------- */
 .onPrimary .register {
   border-color: var(--color-border-light-50);
   color: var(--color-text-light);

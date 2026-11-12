@@ -1,6 +1,5 @@
 @import '../styles/variables.css';
 
-/* ---------- Reset ---------- */
 *,
 *::before,
 *::after {
@@ -64,7 +63,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* ---------- Base ---------- */
 body {
   min-height: 100dvh;
   font-family: var(--font-family);
@@ -77,13 +75,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Видимий фокус для клавіатури, без рамки при кліку мишею */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* ---------- Layout ---------- */
 .container {
   width: 100%;
   margin: 0 auto;
@@ -110,7 +106,6 @@ body {
   }
 }
 
-/* ---------- Utilities ---------- */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -123,7 +118,6 @@ body {
   border: 0;
 }
 
-/* ---------- A11y: менше анімацій, якщо юзер так налаштував ОС ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -13,7 +13,6 @@ type MobileMenuProps = {
 };
 
 export default function MobileMenu({ onClose }: MobileMenuProps) {
-  // закриття по Esc + блокуємо скрол сторінки, поки меню відкрите
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();

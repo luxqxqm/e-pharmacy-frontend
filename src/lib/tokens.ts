@@ -1,5 +1,3 @@
-// робота з токенами в localStorage
-
 type Tokens = {
   accessToken: string;
   refreshToken: string;
@@ -16,7 +14,6 @@ export function getRefreshToken() {
 export function saveTokens({ accessToken, refreshToken }: Tokens) {
   localStorage.setItem('accessToken', accessToken);
   localStorage.setItem('refreshToken', refreshToken);
-  // повідомляємо хедер, що юзер залогінився
   window.dispatchEvent(new Event('auth-change'));
 }
 

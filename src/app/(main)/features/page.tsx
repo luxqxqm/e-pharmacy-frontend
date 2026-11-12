@@ -7,7 +7,6 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = { title: 'Features' };
 
-// сюди веде "Read more" з промо-банера "Secure delivery 100%"
 const features = [
   {
     title: 'Secure delivery',

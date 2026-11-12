@@ -9,7 +9,7 @@ import styles from './NearestStores.module.css';
 async function getNearestStores(): Promise<Store[]> {
   try {
     const { data } = await api.get<Store[]>('/stores/nearest');
-    // за ТЗ показуємо 6 випадкових аптек
+
     return [...data].sort(() => Math.random() - 0.5).slice(0, 6);
   } catch {
     return [];

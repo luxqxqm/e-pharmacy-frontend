@@ -11,7 +11,6 @@ type AuthModalProps = {
   onClose: () => void;
 };
 
-// показуємо неавторизованому юзеру, коли він тисне "Add to cart"
 export default function AuthModal({ onClose }: AuthModalProps) {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

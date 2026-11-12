@@ -5,7 +5,6 @@ import Logo from '@/components/Logo/Logo';
 
 import styles from './layout.module.css';
 
-// Login / Register: без хедера і футера, тільки логотип + промо-текст
 export default function AuthLayout({ children }: LayoutProps<'/'>) {
   return (
     <div className={styles.page}>

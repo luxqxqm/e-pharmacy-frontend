@@ -5,12 +5,10 @@ import styles from './StatusMessage.module.css';
 type StatusMessageProps = {
   title: string;
   text?: string;
-  /** Кнопка/посилання дії: "Try again", "Go home" */
   action?: ReactNode;
   headingLevel?: 'h1' | 'h2';
 };
 
-/** Один компонент для empty / error / not-found станів */
 export default function StatusMessage({
   title,
   text,

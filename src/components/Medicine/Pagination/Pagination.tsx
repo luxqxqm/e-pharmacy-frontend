@@ -8,7 +8,6 @@ import styles from './Pagination.module.css';
 type PaginationProps = {
   page: number;
   totalPage: number;
-  // поточні фільтри, щоб не загубити їх при переході на іншу сторінку
   name: string;
   category: string;
 };
@@ -27,7 +26,6 @@ export default function Pagination({
     return `/medicine?${params.toString()}`;
   };
 
-  // показуємо до 5 номерів навколо поточної сторінки
   const start = Math.max(1, Math.min(page - 2, totalPage - 4));
   const end = Math.min(totalPage, start + 4);
   const pages = [];

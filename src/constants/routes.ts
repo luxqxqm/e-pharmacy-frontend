@@ -33,7 +33,6 @@ export const SOCIAL_LINKS = [
   },
 ] as const;
 
-/** Пункт меню активний і на вкладених сторінках: /product/:id належить до Medicine */
 export function isNavLinkActive(href: string, pathname: string): boolean {
   const isSelfOrChild = pathname === href || pathname.startsWith(`${href}/`);
 

@@ -17,7 +17,6 @@ export default async function MedicinePage({
 }: PageProps<'/medicine'>) {
   const params = await searchParams;
 
-  // беремо фільтри з URL: /medicine?category=Heart&name=asp&page=2
   const name = typeof params.name === 'string' ? params.name : '';
   const category =
     typeof params.category === 'string' && CATEGORIES.includes(params.category)
@@ -25,7 +24,6 @@ export default async function MedicinePage({
       : '';
   const page = Number(params.page) > 0 ? Number(params.page) : 1;
 
-  // фільтрація і пагінація на бекенді
   const { data } = await api.get<ProductsResponse>('/products', {
     params: {
       name: name || undefined,
@@ -40,7 +38,6 @@ export default async function MedicinePage({
       <div className="container">
         <h1 className={styles.title}>Medicine</h1>
 
-        {/* key: при зміні URL форма бере нові значення */}
         <Filters
           key={`${category}-${name}`}
           initialName={name}

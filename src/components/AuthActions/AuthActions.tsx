@@ -11,7 +11,6 @@ import { logout } from '@/lib/auth';
 import styles from './AuthActions.module.css';
 
 type AuthActionsProps = {
-  /** onPrimary: білі кнопки на зеленому фоні (hero, мобільне меню) */
   tone?: 'default' | 'onPrimary';
   onNavigate?: () => void;
   className?: string;

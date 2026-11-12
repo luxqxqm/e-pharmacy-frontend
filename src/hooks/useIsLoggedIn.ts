@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-// чи є токен у localStorage; оновлюється після login/logout
 export function useIsLoggedIn() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

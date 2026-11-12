@@ -9,7 +9,6 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = { title: 'Medicine store' };
 
-// список аптек майже не змінюється, оновлюємо раз на годину
 export const revalidate = 3600;
 
 async function getStores(): Promise<Store[]> {
@@ -38,7 +37,6 @@ export default async function MedicineStorePage() {
                 <StoreCard
                   store={store}
                   action={
-                    // окремої сторінки аптеки в ТЗ нема, ведемо в каталог ліків
                     <ButtonLink href="/medicine" variant="primary">
                       Visit Store
                     </ButtonLink>

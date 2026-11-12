@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import styles from './PromoBanners.module.css';
 
-// у бекенді нема знижок, тому "Shop now" веде на каталог з категорією
 const banners = [
   {
     title: 'Huge Sale',

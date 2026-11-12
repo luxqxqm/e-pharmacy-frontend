@@ -9,14 +9,11 @@ import {
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
-// один інстанс axios на весь проєкт
 export const api = axios.create({
   baseURL,
-  // Render на безкоштовному тарифі може прокидатися до хвилини
   timeout: 70000,
 });
 
-// перед кожним запитом додаємо токен, якщо юзер залогінений
 api.interceptors.request.use((config) => {
   if (typeof window !== 'undefined') {
     const token = getAccessToken();
@@ -27,7 +24,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// access токен живе 15 хв: якщо прострочився, оновлюємо і повторюємо запит
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
@@ -40,7 +36,6 @@ api.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        // звичайний axios, а не api, щоб не зациклитись на інтерцепторах
         const { data } = await axios.post(`${baseURL}/user/refresh`, {
           refreshToken: getRefreshToken(),
         });
@@ -48,7 +43,6 @@ api.interceptors.response.use(
         originalRequest.headers.Authorization = `Bearer ${data.accessToken}`;
         return api(originalRequest);
       } catch {
-        // refresh теж прострочився: розлогінюємо
         clearTokens();
       }
     }
@@ -57,12 +51,10 @@ api.interceptors.response.use(
   },
 );
 
-// дістаємо зрозумілий текст помилки з відповіді бекенда
 export function getErrorMessage(error: unknown): string {
   if (axios.isAxiosError(error)) {
     const data = error.response?.data;
 
-    // помилка валідації celebrate: { validation: { body: { message } } }
     if (data?.validation) {
       const first = Object.values(data.validation)[0] as { message?: string };
       if (first?.message) return first.message;

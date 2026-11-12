@@ -9,9 +9,7 @@ import styles from './StoreCard.module.css';
 
 type StoreCardProps = {
   store: Store;
-  // якщо вся картка вже посилання, телефон не можна робити <a> (a в a — невалідно)
   phoneAsLink?: boolean;
-  // кнопка внизу картки (на сторінці Medicine store — "Visit Store")
   action?: ReactNode;
 };
 
@@ -21,7 +19,6 @@ export default function StoreCard({
   action,
 }: StoreCardProps) {
   const isOpen = isStoreOpen(store._id);
-  // для tel: лишаємо тільки цифри і +
   const phoneHref = store.phone.replace(/[^\d+]/g, '');
 
   return (

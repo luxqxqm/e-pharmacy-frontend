@@ -25,7 +25,6 @@ export default function AddToCartButton({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = async () => {
-    // за ТЗ: гостю показуємо модалку з логіном/реєстрацією
     if (!isLoggedIn) {
       setIsModalOpen(true);
       return;
@@ -35,7 +34,6 @@ export default function AddToCartButton({
     try {
       await addToCart(productId, quantity);
       toast.success('Added to cart');
-      // кажемо хедеру оновити лічильник кошика
       window.dispatchEvent(new Event('cart-change'));
     } catch (error) {
       toast.error(getErrorMessage(error));

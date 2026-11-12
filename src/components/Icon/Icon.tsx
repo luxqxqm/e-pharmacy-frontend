@@ -21,10 +21,6 @@ type IconProps = Omit<SVGProps<SVGSVGElement>, 'children'> & {
   size?: number;
 };
 
-/**
- * Іконка зі спрайту. Колір задається через CSS `color` (currentColor).
- * Декоративна за замовчуванням: доступну назву дає батьківська кнопка/посилання.
- */
 export default function Icon({ name, size = 24, ...props }: IconProps) {
   return (
     <svg

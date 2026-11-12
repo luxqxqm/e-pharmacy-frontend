@@ -16,7 +16,6 @@ export async function login(data: LoginData) {
   saveTokens(res.data);
 }
 
-// бекенд після реєстрації не дає токени, тому одразу логінимось (ТЗ v2)
 export async function register(data: RegisterData) {
   await api.post('/user/register', data);
   await login({ email: data.email, password: data.password });
@@ -26,7 +25,6 @@ export async function logout() {
   try {
     await api.get('/user/logout');
   } finally {
-    // навіть якщо запит впав, на фронті все одно розлогінюємо
     clearTokens();
   }
 }

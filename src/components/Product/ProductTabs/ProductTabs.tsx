@@ -46,7 +46,6 @@ export default function ProductTabs({ product }: ProductTabsProps) {
       <div className={styles.panel} role="tabpanel">
         {activeTab === 'description' ? (
           <p className={styles.description}>
-            {/* опису поки нема на беку */}
             {product.description ??
               `${product.name} is a product from the ${product.category} category by ${product.suppliers}. A detailed description will be added soon. Always read the label and consult your doctor before use.`}
           </p>

@@ -4,7 +4,6 @@ type LoaderProps = {
   label?: string;
 };
 
-/** Render free tier прокидається до ~1 хв, тому підказуємо, що чекати нормально */
 export default function Loader({ label = 'Loading…' }: LoaderProps) {
   return (
     <div className={styles.wrapper} role="status" aria-live="polite">

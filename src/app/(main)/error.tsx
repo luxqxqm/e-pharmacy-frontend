@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import Button from '@/components/Button/Button';
 import StatusMessage from '@/components/StatusMessage/StatusMessage';
 
-/** Error boundary для сторінок усередині SharedLayout: хедер і футер лишаються */
 export default function Error({
   error,
   reset,

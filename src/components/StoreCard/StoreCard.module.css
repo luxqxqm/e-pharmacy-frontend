@@ -8,7 +8,6 @@
   background-color: var(--color-white);
 }
 
-/* декоративні смуги в кутку картки */
 .card::after {
   content: '';
   position: absolute;

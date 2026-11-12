@@ -1,5 +1,3 @@
-// типи даних з мого бекенда
-
 export type Store = {
   _id: string;
   name: string;
@@ -13,7 +11,7 @@ export type CustomerReview = {
   _id: string;
   name: string;
   testimonial: string;
-  photo?: string; // поки нема на беку
+  photo?: string;
 };
 
 export type Product = {
@@ -24,8 +22,8 @@ export type Product = {
   stock: number;
   price: number;
   category: string;
-  description?: string; // поки нема на беку
-  rating?: number; // поки нема на беку
+  description?: string;
+  rating?: number;
 };
 
 export const CATEGORIES = [
@@ -39,7 +37,7 @@ export const CATEGORIES = [
 ];
 
 export type CartItem = {
-  productId: Product | null; // null, якщо продукт видалили з бази
+  productId: Product | null;
   quantity: number;
 };
 

@@ -23,7 +23,6 @@ export default function CartItem({
 }: CartItemProps) {
   const [isUpdating, setIsUpdating] = useState(false);
 
-  // блокуємо кнопки, поки йде запит, щоб не наклікати зайвого
   const changeQuantity = async (newQuantity: number) => {
     setIsUpdating(true);
     await onChangeQuantity(product._id, newQuantity);

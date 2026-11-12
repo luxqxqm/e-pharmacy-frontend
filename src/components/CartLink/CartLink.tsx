@@ -9,7 +9,6 @@ import { getCart } from '@/lib/cart';
 
 import styles from './CartLink.module.css';
 
-// іконка кошика в хедері з кількістю товарів (тільки для залогіненого)
 export default function CartLink() {
   const isLoggedIn = useIsLoggedIn();
   const [count, setCount] = useState(0);
@@ -31,7 +30,6 @@ export default function CartLink() {
     };
 
     loadCount();
-    // AddToCartButton і сторінка кошика кидають цю подію після змін
     window.addEventListener('cart-change', loadCount);
     return () => window.removeEventListener('cart-change', loadCount);
   }, [isLoggedIn]);

@@ -8,8 +8,6 @@ import type { CustomerReview } from '@/types';
 
 import styles from './ProductReviews.module.css';
 
-// окремих відгуків до товару на бекенді нема,
-// тому показуємо загальні відгуки з /customer-reviews (однакові для всіх товарів)
 export default function ProductReviews() {
   const [reviews, setReviews] = useState<CustomerReview[]>([]);
   const [isLoading, setIsLoading] = useState(true);

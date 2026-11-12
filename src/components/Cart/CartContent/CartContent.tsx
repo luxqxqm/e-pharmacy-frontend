@@ -19,7 +19,6 @@ export default function CartContent() {
   const [cart, setCart] = useState<Cart | null>(null);
 
   useEffect(() => {
-    // приватна сторінка: без токена відправляємо на логін
     if (!localStorage.getItem('accessToken')) {
       router.replace('/login');
       return;
@@ -47,7 +46,6 @@ export default function CartContent() {
 
   if (!cart) return <Loader label="Loading cart..." />;
 
-  // товари, які видалили з бази, бекенд віддає з productId: null — не показуємо їх
   const items = cart.products.flatMap((item) =>
     item.productId
       ? [{ product: item.productId, quantity: item.quantity }]

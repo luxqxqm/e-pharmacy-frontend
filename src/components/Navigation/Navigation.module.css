@@ -13,7 +13,6 @@
     border-color var(--transition);
 }
 
-/* ---------- pills: хедер і мобільне меню ---------- */
 .pills {
   flex-direction: column;
   align-items: center;
@@ -48,7 +47,6 @@
   outline-offset: 2px;
 }
 
-/* ---------- plain: футер ---------- */
 .plain {
   flex-wrap: wrap;
   gap: 20px;

@@ -9,7 +9,6 @@ import { NAV_LINKS, isNavLinkActive } from '@/constants/routes';
 import styles from './Navigation.module.css';
 
 type NavigationProps = {
-  /** pills: меню-«пігулки» в хедері; plain: прості посилання у футері */
   variant?: 'pills' | 'plain';
   onNavigate?: () => void;
   className?: string;

@@ -32,7 +32,6 @@ export default async function Reviews() {
             {reviews.map((review, index) => (
               <li key={review._id} className={styles.card}>
                 <Image
-                  // поки бек не віддає фото, беремо локальні аватарки по порядку
                   src={
                     review.photo ??
                     `/images/reviews/avatar-${(index % 3) + 1}.webp`
