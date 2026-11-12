@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 import AuthActions from '@/components/AuthActions/AuthActions';
+import CartLink from '@/components/CartLink/CartLink';
 import Icon from '@/components/Icon/Icon';
 import Logo from '@/components/Logo/Logo';
 import MobileMenu from '@/components/MobileMenu/MobileMenu';
@@ -27,6 +28,8 @@ export default function Header() {
         <Navigation className={styles.navigation} />
 
         <div className={styles.actions}>
+          <CartLink />
+
           <AuthActions
             tone={isHome ? 'onPrimary' : 'default'}
             className={styles.auth}

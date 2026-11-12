@@ -20,7 +20,7 @@ export default function StoreCard({
   phoneAsLink = true,
   action,
 }: StoreCardProps) {
-  const isOpen = isStoreOpen();
+  const isOpen = isStoreOpen(store._id);
   // для tel: лишаємо тільки цифри і +
   const phoneHref = store.phone.replace(/[^\d+]/g, '');
 

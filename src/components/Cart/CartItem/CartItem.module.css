@@ -1,0 +1,94 @@
+.item {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.imageWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-primary-60);
+  border-radius: var(--radius-md);
+  background-color: var(--color-image-bg);
+}
+
+.image {
+  object-fit: contain;
+  padding: 10px;
+}
+
+.info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+}
+
+.category {
+  margin-top: 4px;
+  font-size: var(--fs-small);
+  color: var(--color-text-60);
+}
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+}
+
+.total {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 36px;
+  padding: 0 14px;
+  border: var(--border-width) solid var(--color-border-input);
+  border-radius: var(--radius-pill);
+}
+
+.counter button {
+  display: flex;
+  color: var(--color-text);
+}
+
+.counter button:disabled {
+  opacity: 0.3;
+}
+
+@media (min-width: 768px) {
+  .item {
+    gap: 20px;
+  }
+
+  .imageWrapper {
+    width: 140px;
+    height: 140px;
+  }
+}

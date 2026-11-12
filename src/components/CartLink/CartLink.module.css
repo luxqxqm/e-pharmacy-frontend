@@ -1,0 +1,29 @@
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-height);
+  height: var(--control-height);
+  border-radius: var(--radius-circle);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-cart);
+  color: var(--color-primary);
+}
+
+.count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-mint);
+  font-size: var(--fs-counter);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+}

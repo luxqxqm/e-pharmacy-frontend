@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 
+import CartContent from '@/components/Cart/CartContent/CartContent';
+
 export const metadata: Metadata = { title: 'Cart' };
 
-export default function Page() {
-  return (
-    <div className="container">
-      <h1>Cart</h1>
-    </div>
-  );
+// токен лежить у localStorage, тому весь кошик рендериться на клієнті
+export default function CartPage() {
+  return <CartContent />;
 }
