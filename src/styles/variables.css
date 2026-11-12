@@ -1,0 +1,181 @@
+/*
+ * Design tokens E-Pharmacy (з Figma UI KIT).
+ * Mobile-first: базові значення для 375, перевизначення нижче для 768.
+ * Desktop (1440) має ту саму типографіку, що й tablet, тому окремого блоку немає.
+ * Брейкпоінти (у media queries var() не працює, тому числами): 375 / 768 / 1440.
+ */
+
+:root {
+  /* ---------- Colors: brand ---------- */
+  --color-primary: #59b17a;
+  --color-primary-hover: #3f945f;
+  --color-primary-8: rgba(89, 177, 122, 0.08);
+  --color-primary-10: rgba(89, 177, 122, 0.1);
+  --color-primary-50: rgba(89, 177, 122, 0.5);
+  --color-primary-60: rgba(89, 177, 122, 0.6);
+
+  /* ---------- Colors: surfaces ---------- */
+  --color-bg: #f7f8fa;
+  --color-white: #ffffff;
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-surface-mint: #e7f1ed;
+  --color-surface-mint-40: rgba(231, 241, 237, 0.4);
+  --color-image-bg: #f7f7f7;
+  --color-card-alt: #fdfdfd;
+
+  /* ---------- Colors: text ---------- */
+  --color-text: #1d1e21;
+  --color-text-60: rgba(29, 30, 33, 0.6);
+  --color-text-40: rgba(29, 30, 33, 0.4);
+  --color-text-muted: #93939a;
+  --color-text-review: #6a6a6f;
+  --color-text-promo: #252539;
+  --color-text-inverse: #ffffff;
+  --color-text-light: #f1f1f1;
+
+  /* ---------- Colors: status ---------- */
+  --color-danger: #e85050;
+  --color-danger-10: rgba(232, 80, 80, 0.1);
+  --color-star: #ffc531;
+  --color-star-empty: #f1f1f1;
+
+  /* ---------- Colors: borders ---------- */
+  --color-border: #f1f1f1;
+  --color-border-input: rgba(29, 30, 33, 0.1);
+  --color-border-light-10: rgba(247, 248, 250, 0.1);
+  --color-border-light-50: rgba(247, 248, 250, 0.5);
+  --color-divider-footer: rgba(247, 248, 250, 0.3);
+
+  /* ---------- Typography ---------- */
+  --font-family: var(--font-inter), sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Hero title */
+  --fs-hero: 50px;
+  --lh-hero: 50px;
+
+  /* Банер "Add the medicines…" */
+  --fs-banner: 28px;
+  --lh-banner: 32px;
+  --ls-banner: -0.01em;
+
+  /* H2: заголовок секції */
+  --fs-h2: 28px;
+  --lh-h2: 32px;
+
+  /* H1: заголовок сторінки (однаковий на всіх брейкпоінтах) */
+  --fs-h1: 28px;
+  --lh-h1: 32px;
+
+  /* Відсоток у промо-картці */
+  --fs-promo-value: 24px;
+  --lh-promo-value: 1.4;
+
+  /* Лого */
+  --fs-logo: 16px;
+  --ls-logo: -0.03em;
+
+  /* Назва аптеки / промо-картки */
+  --fs-card-title: 16px;
+  --lh-card-title: 1.4;
+
+  /* Назва товару, ціна */
+  --fs-product-title: 18px;
+  --lh-product-title: 1.4;
+
+  /* Ім'я у відгуку */
+  --fs-review-name: 20px;
+  --lh-review-name: 30px;
+
+  /* Body */
+  --fs-body: 16px;
+  --lh-body: 20px;
+  --lh-body-long: 24px; /* довгий текст: опис товару */
+
+  /* Меню / лейбли форм */
+  --fs-label: 14px;
+  --lh-label: 18px;
+
+  /* Кнопки */
+  --fs-button: 14px;
+  --lh-button: 1;
+
+  /* Таби Description / Reviews */
+  --fs-tab: 14px;
+  --ls-tab: -0.05em;
+
+  /* Small / placeholder / інпути */
+  --fs-small: 12px;
+  --lh-small: 18px;
+
+  /* Бейджі open / close */
+  --fs-badge: 12px;
+  --lh-badge: 18px;
+  --ls-badge: -0.02em;
+
+  /* Посилання "Shop now / Read more" */
+  --fs-link: 13px;
+  --lh-link: 1.4;
+
+  /* Футер copyright */
+  --fs-copyright: 10px;
+  --lh-copyright: 10px;
+
+  /* Лічильник кошика */
+  --fs-counter: 12px;
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 27px;
+  --radius-pill: 60px;
+  --radius-circle: 50%;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card: 0 -1px 14px rgba(29, 30, 33, 0.02);
+  --shadow-icon: 0 1px 4px rgba(16, 24, 40, 0.06);
+  --shadow-cart: 0 -1px 7px rgba(71, 71, 71, 0.05);
+  --text-shadow-hero: 0 4px 85px rgba(29, 30, 33, 0.3);
+
+  /* ---------- Sizes ---------- */
+  --control-height: 44px; /* кнопки, інпути, іконки соцмереж */
+  --border-width: 1px;
+  --icon-stroke: 1.5;
+
+  /* ---------- Motion ---------- */
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-hero: 74px;
+    --lh-hero: 74px;
+
+    --fs-banner: 48px;
+    --lh-banner: 55px;
+
+    --fs-h2: 40px;
+    --lh-h2: 48px;
+
+    --fs-promo-value: 36px;
+
+    --fs-logo: 20px;
+
+    --fs-card-title: 20px;
+
+    --fs-label: 16px;
+    --lh-label: 20px;
+
+    --fs-small: 14px;
+
+    --fs-link: 14px;
+
+    --fs-copyright: 14px;
+    --lh-copyright: 18px;
+  }
+}
