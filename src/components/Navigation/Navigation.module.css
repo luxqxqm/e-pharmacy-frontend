@@ -1,88 +1,47 @@
 .list {
   display: flex;
-}
-
-.link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  transition:
-    color var(--transition),
-    background-color var(--transition),
-    border-color var(--transition);
-}
-
-.pills {
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
 
-.pills .link {
+.link {
+  display: inline-flex;
+  align-items: center;
   min-height: 46px;
   padding: 0 20px;
-  border: 6px solid var(--color-white);
+  border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-pill);
   background-color: var(--color-white);
-  outline: var(--border-width) solid var(--color-border);
-  outline-offset: -6px;
-  color: var(--color-text-muted);
   font-size: var(--fs-label);
-  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  transition:
+    color var(--transition),
+    background-color var(--transition);
 }
 
-.pills .link:hover {
+.link:hover {
   color: var(--color-primary);
 }
 
-.pills .link.active {
+.active,
+.active:hover {
+  border: 6px solid var(--color-white);
   background-color: var(--color-primary);
   color: var(--color-text-inverse);
-  outline-color: transparent;
-}
-
-.pills .link:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-.plain {
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.plain .link {
-  font-size: var(--fs-label);
-  font-weight: var(--fw-semibold);
-  line-height: var(--lh-label);
-  color: var(--color-text-inverse);
-}
-
-.plain .link:hover {
-  opacity: 0.7;
 }
 
 @media (min-width: 1440px) {
-  .pills {
+  .list {
     flex-direction: row;
     gap: 0;
-    padding: 0;
     border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-pill);
     background-color: var(--color-white);
   }
 
-  .pills .link {
-    outline: none;
-  }
-
-  .pills .link:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: -4px;
-  }
-
-  .plain {
-    gap: 32px;
+  .link {
+    border: none;
   }
 }

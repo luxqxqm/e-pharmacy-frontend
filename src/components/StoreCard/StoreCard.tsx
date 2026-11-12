@@ -1,24 +1,25 @@
-import type { ReactNode } from 'react';
+import Link from 'next/link';
 import clsx from 'clsx';
 
+import buttonStyles from '@/components/Button/Button.module.css';
 import Icon from '@/components/Icon/Icon';
 import type { Store } from '@/types';
-import { isStoreOpen } from '@/utils/isStoreOpen';
 
 import styles from './StoreCard.module.css';
 
 type StoreCardProps = {
   store: Store;
+  isOpen: boolean;
   phoneAsLink?: boolean;
-  action?: ReactNode;
+  showVisitButton?: boolean;
 };
 
 export default function StoreCard({
   store,
+  isOpen,
   phoneAsLink = true,
-  action,
+  showVisitButton = false,
 }: StoreCardProps) {
-  const isOpen = isStoreOpen(store._id);
   const phoneHref = store.phone.replace(/[^\d+]/g, '');
 
   return (
@@ -61,7 +62,18 @@ export default function StoreCard({
         </li>
       </ul>
 
-      {action && <div className={styles.action}>{action}</div>}
+      {showVisitButton && (
+        <Link
+          href="/medicine"
+          className={clsx(
+            buttonStyles.button,
+            buttonStyles.primary,
+            styles.button,
+          )}
+        >
+          Visit Store
+        </Link>
+      )}
     </article>
   );
 }

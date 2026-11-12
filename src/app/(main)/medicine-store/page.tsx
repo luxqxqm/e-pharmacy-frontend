@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { ButtonLink } from '@/components/Button/Button';
 import StoreCard from '@/components/StoreCard/StoreCard';
 import { api } from '@/lib/api';
 import type { Store } from '@/types';
@@ -32,15 +31,12 @@ export default async function MedicineStorePage() {
           <p className={styles.empty}>Stores are not available now</p>
         ) : (
           <ul className={styles.list}>
-            {stores.map((store) => (
+            {stores.map((store, index) => (
               <li key={store._id}>
                 <StoreCard
                   store={store}
-                  action={
-                    <ButtonLink href="/medicine" variant="primary">
-                      Visit Store
-                    </ButtonLink>
-                  }
+                  isOpen={index % 2 === 0}
+                  showVisitButton
                 />
               </li>
             ))}

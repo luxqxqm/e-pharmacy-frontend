@@ -114,7 +114,7 @@ export default function RegisterForm() {
       </div>
 
       <div className={styles.actions}>
-        <Button type="submit" disabled={isSubmitting} fullWidth>
+        <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Loading...' : 'Register'}
         </Button>
         <Link href="/login" className={styles.switchLink}>

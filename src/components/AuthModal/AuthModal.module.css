@@ -46,6 +46,7 @@
   margin-top: 32px;
 }
 
-.actions > * {
+.actions a {
+  width: 100%;
   min-height: var(--control-height);
 }

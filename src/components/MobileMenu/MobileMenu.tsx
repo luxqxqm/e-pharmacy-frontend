@@ -39,11 +39,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           <Icon name="close" size={32} />
         </button>
 
-        <Navigation
-          onNavigate={onClose}
-          className={styles.navigation}
-          label="Mobile navigation"
-        />
+        <Navigation onNavigate={onClose} className={styles.navigation} />
 
         <AuthActions
           tone="onPrimary"

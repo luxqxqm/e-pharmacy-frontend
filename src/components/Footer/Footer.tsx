@@ -1,11 +1,34 @@
+import Link from 'next/link';
 import clsx from 'clsx';
 
 import Icon from '@/components/Icon/Icon';
 import Logo from '@/components/Logo/Logo';
-import Navigation from '@/components/Navigation/Navigation';
-import { SOCIAL_LINKS } from '@/constants/routes';
 
 import styles from './Footer.module.css';
+
+const links = [
+  { href: '/home', label: 'Home' },
+  { href: '/medicine-store', label: 'Medicine store' },
+  { href: '/medicine', label: 'Medicine' },
+];
+
+const socials = [
+  {
+    label: 'Facebook',
+    icon: 'facebook',
+    href: 'https://www.facebook.com/goITclub/',
+  },
+  {
+    label: 'Instagram',
+    icon: 'instagram',
+    href: 'https://www.instagram.com/goitclub/',
+  },
+  {
+    label: 'YouTube',
+    icon: 'youtube',
+    href: 'https://www.youtube.com/c/GoIT',
+  },
+];
 
 export default function Footer() {
   return (
@@ -20,23 +43,27 @@ export default function Footer() {
             </p>
           </div>
 
-          <Navigation
-            variant="plain"
-            className={styles.navigation}
-            label="Footer navigation"
-          />
+          <ul className={styles.navigation}>
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={styles.navLink}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           <ul className={styles.socials}>
-            {SOCIAL_LINKS.map(({ label, icon, href }) => (
-              <li key={label}>
+            {socials.map((social) => (
+              <li key={social.label}>
                 <a
-                  href={href}
+                  href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${label} (opens in a new tab)`}
+                  aria-label={social.label}
                   className={styles.socialLink}
                 >
-                  <Icon name={icon} size={44} />
+                  <Icon name={social.icon} size={44} />
                 </a>
               </li>
             ))}

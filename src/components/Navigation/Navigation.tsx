@@ -4,44 +4,39 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-import { NAV_LINKS, isNavLinkActive } from '@/constants/routes';
-
 import styles from './Navigation.module.css';
 
+const links = [
+  { href: '/home', label: 'Home' },
+  { href: '/medicine-store', label: 'Medicine store' },
+  { href: '/medicine', label: 'Medicine' },
+];
+
 type NavigationProps = {
-  variant?: 'pills' | 'plain';
   onNavigate?: () => void;
   className?: string;
-  label?: string;
 };
 
-export default function Navigation({
-  variant = 'pills',
-  onNavigate,
-  className,
-  label = 'Main navigation',
-}: NavigationProps) {
+export default function Navigation({ onNavigate, className }: NavigationProps) {
   const pathname = usePathname();
 
   return (
-    <nav aria-label={label} className={className}>
-      <ul className={clsx(styles.list, styles[variant])}>
-        {NAV_LINKS.map(({ href, label: text }) => {
-          const isActive = isNavLinkActive(href, pathname);
-
-          return (
-            <li key={href}>
-              <Link
-                href={href}
-                onClick={onNavigate}
-                aria-current={isActive ? 'page' : undefined}
-                className={clsx(styles.link, isActive && styles.active)}
-              >
-                {text}
-              </Link>
-            </li>
-          );
-        })}
+    <nav className={className}>
+      <ul className={styles.list}>
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              onClick={onNavigate}
+              className={clsx(
+                styles.link,
+                pathname === link.href && styles.active,
+              )}
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

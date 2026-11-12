@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-import { ROUTES } from '@/constants/routes';
-
 import styles from './Logo.module.css';
 
 type LogoProps = {
@@ -18,7 +16,7 @@ export default function Logo({ variant = 'default', className }: LogoProps) {
       : '/images/brand/logo.webp';
 
   return (
-    <Link href={ROUTES.home} className={clsx(styles.logo, className)}>
+    <Link href="/home" className={clsx(styles.logo, className)}>
       <Image
         src={src}
         alt="E-Pharmacy"

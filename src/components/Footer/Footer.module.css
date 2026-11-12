@@ -33,6 +33,20 @@
 
 .navigation {
   grid-area: navigation;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navLink {
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-label);
+  transition: opacity var(--transition);
+}
+
+.navLink:hover {
+  opacity: 0.7;
 }
 
 .socials {

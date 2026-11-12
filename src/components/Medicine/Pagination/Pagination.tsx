@@ -26,63 +26,42 @@ export default function Pagination({
     return `/medicine?${params.toString()}`;
   };
 
-  const start = Math.max(1, Math.min(page - 2, totalPage - 4));
-  const end = Math.min(totalPage, start + 4);
   const pages = [];
-  for (let i = start; i <= end; i++) pages.push(i);
+  for (let i = 1; i <= totalPage; i++) {
+    pages.push(i);
+  }
 
   return (
-    <nav className={styles.pagination} aria-label="Pagination">
-      {page > 1 ? (
+    <div className={styles.pagination}>
+      {page > 1 && (
         <Link
           href={getHref(page - 1)}
-          className={styles.arrow}
+          className={styles.page}
           aria-label="Previous page"
         >
           <Icon name="arrow-left" size={20} />
         </Link>
-      ) : (
-        <span
-          className={clsx(styles.arrow, styles.disabled)}
-          aria-hidden="true"
-        >
-          <Icon name="arrow-left" size={20} />
-        </span>
       )}
 
-      <ul className={styles.list}>
-        {pages.map((pageNumber) => (
-          <li key={pageNumber}>
-            <Link
-              href={getHref(pageNumber)}
-              className={clsx(
-                styles.page,
-                pageNumber === page && styles.active,
-              )}
-              aria-current={pageNumber === page ? 'page' : undefined}
-            >
-              {pageNumber}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {pages.map((pageNumber) => (
+        <Link
+          key={pageNumber}
+          href={getHref(pageNumber)}
+          className={clsx(styles.page, pageNumber === page && styles.active)}
+        >
+          {pageNumber}
+        </Link>
+      ))}
 
-      {page < totalPage ? (
+      {page < totalPage && (
         <Link
           href={getHref(page + 1)}
-          className={styles.arrow}
+          className={styles.page}
           aria-label="Next page"
         >
           <Icon name="arrow-right" size={20} />
         </Link>
-      ) : (
-        <span
-          className={clsx(styles.arrow, styles.disabled)}
-          aria-hidden="true"
-        >
-          <Icon name="arrow-right" size={20} />
-        </span>
       )}
-    </nav>
+    </div>
   );
 }

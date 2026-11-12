@@ -88,7 +88,7 @@ a.infoItem:hover {
   color: var(--color-primary);
 }
 
-.action {
+.button {
   position: relative;
   z-index: 1;
   margin-top: 32px;

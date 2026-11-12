@@ -1,57 +1,33 @@
-import type { ComponentProps } from 'react';
-import Link from 'next/link';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 
 import styles from './Button.module.css';
 
-type Variant = 'primary' | 'outline' | 'danger';
-
-type CommonProps = {
-  variant?: Variant;
-  fullWidth?: boolean;
+type ButtonProps = {
+  children: ReactNode;
+  onClick?: () => void;
+  type?: 'button' | 'submit';
+  disabled?: boolean;
+  variant?: 'primary' | 'outline' | 'danger';
+  className?: string;
 };
 
-type ButtonProps = ComponentProps<'button'> & CommonProps;
-type ButtonLinkProps = ComponentProps<typeof Link> & CommonProps;
-
-function getClassName(
-  { variant = 'primary', fullWidth }: CommonProps,
-  className?: string,
-) {
-  return clsx(
-    styles.button,
-    styles[variant],
-    fullWidth && styles.fullWidth,
-    className,
-  );
-}
-
 export default function Button({
-  variant,
-  fullWidth,
-  className,
+  children,
+  onClick,
   type = 'button',
-  ...props
+  disabled,
+  variant = 'primary',
+  className,
 }: ButtonProps) {
   return (
     <button
       type={type}
-      className={getClassName({ variant, fullWidth }, className)}
-      {...props}
-    />
-  );
-}
-
-export function ButtonLink({
-  variant,
-  fullWidth,
-  className,
-  ...props
-}: ButtonLinkProps) {
-  return (
-    <Link
-      className={getClassName({ variant, fullWidth }, className)}
-      {...props}
-    />
+      onClick={onClick}
+      disabled={disabled}
+      className={clsx(styles.button, styles[variant], className)}
+    >
+      {children}
+    </button>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import clsx from 'clsx';
 
-import { ButtonLink } from '@/components/Button/Button';
+import buttonStyles from '@/components/Button/Button.module.css';
 import Icon from '@/components/Icon/Icon';
 
 import styles from './page.module.css';
@@ -47,9 +49,16 @@ export default function FeaturesPage() {
           ))}
         </ul>
 
-        <ButtonLink href="/medicine" className={styles.button}>
+        <Link
+          href="/medicine"
+          className={clsx(
+            buttonStyles.button,
+            buttonStyles.primary,
+            styles.button,
+          )}
+        >
           Buy medicine
-        </ButtonLink>
+        </Link>
       </div>
     </section>
   );

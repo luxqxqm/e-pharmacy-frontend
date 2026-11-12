@@ -32,11 +32,6 @@ export default function ProductImage({
       className={className}
       priority={priority}
       onError={() => setHasError(true)}
-      ref={(img) => {
-        if (img && img.complete && img.naturalWidth === 0 && !hasError) {
-          setHasError(true);
-        }
-      }}
     />
   );
 }

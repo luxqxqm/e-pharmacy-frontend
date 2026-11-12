@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
+import clsx from 'clsx';
 
-import { ButtonLink } from '@/components/Button/Button';
+import buttonStyles from '@/components/Button/Button.module.css';
 import Icon from '@/components/Icon/Icon';
 
 import styles from './AuthModal.module.css';
@@ -52,12 +54,18 @@ export default function AuthModal({ onClose }: AuthModalProps) {
         </p>
 
         <div className={styles.actions}>
-          <ButtonLink href="/login" fullWidth>
+          <Link
+            href="/login"
+            className={clsx(buttonStyles.button, buttonStyles.primary)}
+          >
             Log in
-          </ButtonLink>
-          <ButtonLink href="/register" variant="outline" fullWidth>
+          </Link>
+          <Link
+            href="/register"
+            className={clsx(buttonStyles.button, buttonStyles.outline)}
+          >
             Register
-          </ButtonLink>
+          </Link>
         </div>
       </div>
     </div>

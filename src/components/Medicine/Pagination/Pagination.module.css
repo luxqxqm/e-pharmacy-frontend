@@ -1,18 +1,12 @@
 .pagination {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   margin-top: 40px;
 }
 
-.list {
-  display: flex;
-  gap: 8px;
-}
-
-.page,
-.arrow {
+.page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,8 +22,7 @@
     color var(--transition);
 }
 
-.page:hover,
-.arrow:hover {
+.page:hover {
   color: var(--color-primary);
 }
 
@@ -40,19 +33,12 @@
   color: var(--color-text-inverse);
 }
 
-.disabled,
-.disabled:hover {
-  color: var(--color-text-40);
-  cursor: not-allowed;
-}
-
 @media (min-width: 768px) {
   .pagination {
     margin-top: 60px;
   }
 
-  .page,
-  .arrow {
+  .page {
     width: 44px;
     height: 44px;
   }

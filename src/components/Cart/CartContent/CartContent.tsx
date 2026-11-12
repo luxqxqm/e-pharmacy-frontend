@@ -1,14 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import clsx from 'clsx';
 import toast from 'react-hot-toast';
 
-import { ButtonLink } from '@/components/Button/Button';
+import buttonStyles from '@/components/Button/Button.module.css';
 import Loader from '@/components/Loader/Loader';
 import { getErrorMessage } from '@/lib/api';
 import { getCart, updateCart } from '@/lib/cart';
-import type { Cart } from '@/types';
+import type { Cart, Product } from '@/types';
 
 import CartItem from '../CartItem/CartItem';
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
@@ -46,11 +48,7 @@ export default function CartContent() {
 
   if (!cart) return <Loader label="Loading cart..." />;
 
-  const items = cart.products.flatMap((item) =>
-    item.productId
-      ? [{ product: item.productId, quantity: item.quantity }]
-      : [],
-  );
+  const items = cart.products.filter((item) => item.productId !== null);
 
   return (
     <section className={styles.section}>
@@ -60,7 +58,12 @@ export default function CartContent() {
         {items.length === 0 ? (
           <div className={styles.empty}>
             <p>Your cart is empty</p>
-            <ButtonLink href="/medicine">Go to medicine</ButtonLink>
+            <Link
+              href="/medicine"
+              className={clsx(buttonStyles.button, buttonStyles.primary)}
+            >
+              Go to medicine
+            </Link>
           </div>
         ) : (
           <div className={styles.layout}>
@@ -71,9 +74,9 @@ export default function CartContent() {
 
             <ul className={styles.list}>
               {items.map((item) => (
-                <li key={item.product._id}>
+                <li key={item.productId?._id}>
                   <CartItem
-                    product={item.product}
+                    product={item.productId as Product}
                     quantity={item.quantity}
                     onChangeQuantity={handleChangeQuantity}
                   />

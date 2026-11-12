@@ -31,10 +31,14 @@ export default async function NearestStores() {
           <p className={styles.empty}>Stores are not available now</p>
         ) : (
           <ul className={styles.list}>
-            {stores.map((store) => (
+            {stores.map((store, index) => (
               <li key={store._id}>
                 <Link href="/medicine-store" className={styles.link}>
-                  <StoreCard store={store} phoneAsLink={false} />
+                  <StoreCard
+                    store={store}
+                    isOpen={index % 2 === 0}
+                    phoneAsLink={false}
+                  />
                 </Link>
               </li>
             ))}

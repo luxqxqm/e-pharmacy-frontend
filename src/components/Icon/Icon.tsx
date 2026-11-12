@@ -1,35 +1,12 @@
-import type { SVGProps } from 'react';
-
-export type IconName =
-  | 'arrow-left'
-  | 'arrow-right'
-  | 'bolt'
-  | 'close'
-  | 'facebook'
-  | 'instagram'
-  | 'map-pin'
-  | 'menu'
-  | 'minus'
-  | 'phone'
-  | 'plus'
-  | 'shopping-cart'
-  | 'star'
-  | 'youtube';
-
-type IconProps = Omit<SVGProps<SVGSVGElement>, 'children'> & {
-  name: IconName;
+type IconProps = {
+  name: string;
   size?: number;
+  className?: string;
 };
 
-export default function Icon({ name, size = 24, ...props }: IconProps) {
+export default function Icon({ name, size = 24, className }: IconProps) {
   return (
-    <svg
-      width={size}
-      height={size}
-      aria-hidden="true"
-      focusable="false"
-      {...props}
-    >
+    <svg width={size} height={size} className={className} aria-hidden="true">
       <use href={`/icons/sprite.svg#${name}`} />
     </svg>
   );
