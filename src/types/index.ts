@@ -25,6 +25,22 @@ export type Product = {
   price: number;
   category: string;
   description?: string; // поки нема на беку
+  rating?: number; // поки нема на беку
+};
+
+// відгук до продукту — бекенд ще треба доробити
+export type ProductReview = {
+  _id: string;
+  name: string;
+  rating: number;
+  comment: string;
+  createdAt: string;
+};
+
+export type ProductReviewsResponse = {
+  page: number;
+  totalPage: number;
+  reviews: ProductReview[];
 };
 
 export const CATEGORIES = [

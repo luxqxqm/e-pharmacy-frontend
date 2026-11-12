@@ -1,0 +1,23 @@
+.section {
+  padding: 40px 0 80px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 50px 0 120px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

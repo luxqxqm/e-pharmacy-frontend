@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 108px;
+  height: var(--control-height);
+  padding: 0 18px;
+  border: var(--border-width) solid var(--color-border-input);
+  border-radius: var(--radius-pill);
+}
+
+.counterButton {
+  display: flex;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.counterButton:hover:not(:disabled) {
+  color: var(--color-primary);
+}
+
+.counterButton:disabled {
+  opacity: 0.3;
+}
+
+.value {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+}

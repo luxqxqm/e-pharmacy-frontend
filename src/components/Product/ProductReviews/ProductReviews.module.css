@@ -1,0 +1,59 @@
+.message {
+  color: var(--color-text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review {
+  padding-bottom: 20px;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.name {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+}
+
+.date {
+  margin-top: 4px;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFull {
+  color: var(--color-star);
+}
+
+.starEmpty {
+  color: var(--color-star-empty);
+}
+
+.comment {
+  margin-top: 12px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-body-long);
+  color: var(--color-text-review);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
